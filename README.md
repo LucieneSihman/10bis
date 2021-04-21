@@ -1,2 +1,2 @@
 # 10bis
-Final Project Test with Selenium TestNg and Maven
+Function sanity to 10bis site

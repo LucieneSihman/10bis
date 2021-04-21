@@ -4,7 +4,8 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="tests.RegistrationTest"/>
-            <class name="tests.SanityTest"/>
+       <class name="tests.SanityTest"/>
+        <class name="tests.ErrorHandlingTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

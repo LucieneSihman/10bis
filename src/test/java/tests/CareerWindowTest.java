@@ -7,7 +7,6 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import pages.Career;
 import pages.Main;
 import utilites.GetDriver;
 import utilites.Utilities;
@@ -44,7 +43,6 @@ public class CareerWindowTest {
 	
 	//pages
 	private Main main;
-	private Career career;
 	
 	
 	private static final Logger logger = LogManager.getLogger(CareerWindowTest.class);
@@ -65,7 +63,7 @@ public class CareerWindowTest {
 		driver = GetDriver.getDriver(browser, baseUrl, user);
 		
 		main = new Main(driver);
-		career = new Career(driver);
+		
 
 	}
 
@@ -90,7 +88,7 @@ public class CareerWindowTest {
 		logger.info("Going to conection page");
 		//main.login();
 		logger.info("click on career link");
-		Assert.assertTrue(career.verifyCarrerWindow(), "Failed to open career window");
+		Assert.assertTrue(main.verifyCarrerWindow(), "Failed to open career window");
 		logger.info("Successfully open the career window");
 
 	}

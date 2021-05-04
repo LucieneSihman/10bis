@@ -7,7 +7,6 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import pages.Career;
 import pages.Login;
 import pages.Main;
 import pages.Restaurant;

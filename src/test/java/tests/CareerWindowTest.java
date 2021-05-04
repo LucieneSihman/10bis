@@ -36,7 +36,7 @@ public class CareerWindowTest {
 	// Add extent reports
 	private ExtentReports extent;
 	private ExtentTest myTest;
-	private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\report.html";
+	private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\report_CarrerWindow.html";
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -87,7 +87,7 @@ public class CareerWindowTest {
 	
 	@Test(priority = 1, enabled = true, description = "verify the open of career window")
 	public void goToRegister() throws InterruptedException, IOException {
-		logger.info("Going to connection page");
+		logger.info("Going to conection page");
 		//main.login();
 		logger.info("click on career link");
 		Assert.assertTrue(career.verifyCarrerWindow(), "Failed to open career window");

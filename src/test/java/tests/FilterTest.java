@@ -7,6 +7,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import pages.Career;
 import pages.Login;
 import pages.Main;
 import pages.Restaurant;
@@ -34,29 +35,23 @@ import org.testng.annotations.AfterMethod;
 public class FilterTest {
 
 	// Global variables 
-	// Add extent reports
-	private ExtentReports extent;
-	private ExtentTest myTest;
-	private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\FilterReport.html";
+		// Add extent reports
+		private ExtentReports extent;
+		private ExtentTest myTest;
+		private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\report_CarrerWindow.html";
 
-	private WebDriver driver;
-	
-	
-	//pages
-	private Main main;
-	private Login login;
-	private Restaurant restaurant;
-	
-	private static String email;
-	private static String password;
-	private static String browser;
-	private static String baseUrl;
-	private static String userName;
-	private static String adress;
-	
-	
-	private static final Logger logger = LogManager.getLogger(FilterTest.class);
+		private WebDriver driver;
+		private String baseUrl;
+		private String user;
+		
+		//pages
+		private Main main;
+		private Restaurant restaurant;
+		
+		
+		private static final Logger logger = LogManager.getLogger(FilterTest.class);
 
+		
 	
 
 	@BeforeClass
@@ -67,17 +62,13 @@ public class FilterTest {
 		extent.loadConfig(new File(System.getProperty("user.dir") + "\\resources\\extent-config.xml"));
 		
 		baseUrl = Utilities.getDataFromXML("info.xml", "baseUrl", 0);
-		browser = Utilities.getDataFromXML("info.xml", "browser", 0);
-		email = Utilities.getDataFromXML("info.xml", "email", 0);
-		password = Utilities.getDataFromXML("info.xml", "password", 0);
-		userName = Utilities.getDataFromXML("info.xml", "userName", 0);
-		adress = Utilities.getDataFromXML("info.xml", "adress", 0);
+		String browser =Utilities.getDataFromXML("info.xml", "browser", 0);
+	    user =Utilities.getDataFromXML("info.xml", "user", 0);
 		
-		driver = GetDriver.getDriver(browser, baseUrl);
+		driver = GetDriver.getDriver(browser, baseUrl, user);
 		
 		main = new Main(driver);
-		login = new Login(driver);
-        restaurant = new Restaurant(driver);
+		restaurant = new Restaurant(driver);
 	}
 
 	
@@ -92,8 +83,8 @@ public class FilterTest {
 	
 	/*  Prerequisite: getting into https://www.10bis.co.il/
 	 * 		Given: Client is in site 
-	 * 		When: click register link
-	 *  	Then: Getting into Registration page
+	 * 		When: Clicking in restaurant filter
+	 *  	Then: Show number of filtered options in the page 
 	 */
 	
 	@Test(priority = 1, enabled = true, description = "verify filter results")
@@ -101,7 +92,7 @@ public class FilterTest {
 		
 		logger.info("Going to registration page");
 		main.login();
-		login.doLoginFacebook(email, password, userName, adress);
+
 		Assert.assertTrue(restaurant.useFilter());
 		logger.info("Successfully Get Register page");
 

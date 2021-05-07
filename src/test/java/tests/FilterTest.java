@@ -37,16 +37,21 @@ public class FilterTest {
 		// Add extent reports
 		private ExtentReports extent;
 		private ExtentTest myTest;
-		private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\report_CarrerWindow.html";
+		private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\reportFilter.html";
 
 		private WebDriver driver;
 		private String baseUrl;
-		private String user;
+		//private String user;
+		private static String email;
+		private static String password;
+		private static String adress;
+		private static String userName;
+
 		
 		//pages
 		private Main main;
 		private Restaurant restaurant;
-		
+		private Login login;
 		
 		private static final Logger logger = LogManager.getLogger(FilterTest.class);
 
@@ -62,12 +67,19 @@ public class FilterTest {
 		
 		baseUrl = Utilities.getDataFromXML("info.xml", "baseUrl", 0);
 		String browser =Utilities.getDataFromXML("info.xml", "browser", 0);
-	    user =Utilities.getDataFromXML("info.xml", "user", 0);
+		email = Utilities.getDataFromXML("info.xml", "email", 0);
+		password = Utilities.getDataFromXML("info.xml", "password", 0);
+		userName = Utilities.getDataFromXML("info.xml", "userName", 0);
+		adress = Utilities.getDataFromXML("info.xml", "adress", 0);
+	   // user =Utilities.getDataFromXML("info.xml", "user", 0);
 		
-		driver = GetDriver.getDriver(browser, baseUrl, user);
+		//driver = GetDriver.getDriver(browser, baseUrl,user);
+		driver = GetDriver.getDriver(browser, baseUrl);
+
 		
 		main = new Main(driver);
 		restaurant = new Restaurant(driver);
+		login = new Login(driver);
 	}
 
 	
@@ -78,22 +90,35 @@ public class FilterTest {
 		myTest.log(LogStatus.INFO, "Starting test", "Start test");
 	}
 	
+	@Test(priority = 1, enabled = true, description = "Login 10bis using Facebook")
+	public void LoginUsingFacebook() throws InterruptedException, IOException, ParserConfigurationException, SAXException {
+
+		logger.info("Going to connection page");
+		main.login();
+		logger.info("Going to login with facebook details");
+		
+		Assert.assertTrue(login.doLoginFacebook(email, password, userName, adress), "could not login with Facebook account, check logs");
+		
+		logger.info("Successfully Get into 10bis as registred user page (facebook login)");
+
+	}
+	
 
 	
 	/*  Prerequisite: getting into https://www.10bis.co.il/
 	 * 		Given: Client is in site 
 	 * 		When: Clicking in restaurant filter
-	 *  	Then: Show number of filtered options in the page 
+	 *  	Then: Show the occurrences of filtered options in the page 
 	 */
 	
-	@Test(priority = 1, enabled = true, description = "verify filter results")
+	@Test(priority = 2, enabled = true, description = "verify the occurrences of filter results")
 	public void checkFilter() throws InterruptedException, IOException {
 		
-		logger.info("Going to registration page");
-		main.login();
+		logger.info("Going to 10Bis conected page");
+		
 
 		Assert.assertTrue(restaurant.useFilter());
-		logger.info("Successfully Get Register page");
+		logger.info("Successfully verify the occurrences of filter results");
 
 	}
 	

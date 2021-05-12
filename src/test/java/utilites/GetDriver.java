@@ -28,7 +28,7 @@ public class GetDriver {
 		}
 		
 		//add general wait for elements
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		
 		// maximize window
 		driver.manage().window().maximize();
@@ -53,11 +53,11 @@ public class GetDriver {
 			}
 			
 			//add general wait for elements
-			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			
 			
 			//add maximum time waiting for page to load
-			driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
 			
 			// maximize window
 			driver.manage().window().maximize();
@@ -95,11 +95,11 @@ public class GetDriver {
 			}
 			
 			//add general wait for elements
-			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			
 			
 			//add maximu time waiting for page to load
-			driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
 			
 			// maximize window
 			driver.manage().window().maximize();

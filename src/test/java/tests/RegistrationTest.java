@@ -36,7 +36,7 @@ public class RegistrationTest {
 	// Add extent reports
 	private ExtentReports extent;
 	private ExtentTest myTest;
-	private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\report.html";
+	private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\reportRegistration.html";
 
 	private WebDriver driver;
 	private String baseUrl;

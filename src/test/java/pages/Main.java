@@ -14,6 +14,10 @@ public class Main extends Base {
 	// start registration
 	public boolean register() throws InterruptedException {
 
+		// close pop-up
+		click(By.xpath("//*[@id=\"wm-shoutout-337329\"]/div[1]"));
+		
+		//Click on registration
 		click(By.xpath("//button[text()='הרשמה']"));
 		if (isExist(By.id("modal-title")))
 			return true;
@@ -22,9 +26,15 @@ public class Main extends Base {
 
 	}
 	
+	
+	
 	// start login
 		public boolean login() throws InterruptedException {
 			
+			// close pop-up
+			click(By.xpath("//*[@id=\"wm-shoutout-337329\"]/div[1]"));
+			
+	
 			//Click connection
 			click(By.xpath("//button[text()='התחברות']"));
 			
@@ -38,6 +48,9 @@ public class Main extends Base {
 		// Click on Career link
 				public boolean verifyCarrerWindow() throws InterruptedException {
 
+					// close pop-up
+					click(By.xpath("//*[@id=\"wm-shoutout-337329\"]/div[1]"));
+					
 					String baseHandle = driver.getWindowHandle();
 					
 					 
@@ -47,7 +60,6 @@ public class Main extends Base {
 					Thread.sleep(3000);
 					
 					//switch to career window
-					Thread.sleep(1000);
 					Set<String> handels = driver.getWindowHandles();
 
 					for (String h : handels) {
@@ -55,7 +67,8 @@ public class Main extends Base {
 							driver.switchTo().window(h);
 					}
 					
-
+					Thread.sleep(3000);
+					
 					String WindowUrl ="https://careers.takeaway.com/global/en";
 					
 					if (WindowUrl.equals(driver.getCurrentUrl()))

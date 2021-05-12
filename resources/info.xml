@@ -3,10 +3,11 @@
 <browser>chrome</browser>
 <baseUrl>https://www.10bis.co.il/</baseUrl>
 <email>lsihman@hotmail.com</email>
-<password>XXXXXXX</password>
+<password>lual1620</password>
 <userName>Luciene</userName>
 <user>Luciene</user>
 <Hebrewname>לסיין</Hebrewname>
 <adress>Bialik 6 , raanana</adress>
-<restaurantName>ביגה</restaurantName>
+<!-- <restaurantName>ביגה</restaurantName> -->
+<restaurantName>שניצלס</restaurantName>
 </config>

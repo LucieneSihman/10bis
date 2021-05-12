@@ -58,7 +58,7 @@ public class SanityTest {
 	
 	
 	//Restaurant search and order details:
-		private final String paymentText = "אמצעי תשלום";;
+	private final String paymentText = "ההזמנה שלך מ";
 
 
 	@BeforeClass

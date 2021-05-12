@@ -35,7 +35,7 @@ public class ErrorHandlingTest {
 	// Add extent reports
 	private ExtentReports extent;
 	private ExtentTest myTest;
-	private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\errorHandlingReport.html";
+	private static String reportPaht = System.getProperty("user.dir") + "\\test-output\\reportErrorHandling.html";
 
 	private WebDriver driver;
 	private String baseUrl;

@@ -12,7 +12,8 @@ public class Login extends Base {
 	public Login(WebDriver driver) {
 		super(driver);
 	}
-
+	
+	
 	// start login
 	public boolean doLoginFacebook(String email, String password, String user, String adress) throws InterruptedException {
 
@@ -21,10 +22,10 @@ public class Login extends Base {
 		//Click facebook image
 		click(By.xpath("//img[@type='facebook']"));
 		
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		//switch to Facebook login window
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		Set<String> handels = driver.getWindowHandles();
 
 		for (String h : handels) {
@@ -37,12 +38,10 @@ public class Login extends Base {
 		Thread.sleep(1000);
 
 		driver.findElement(By.id("pass")).sendKeys(password);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		click(By.name("login"));
 
-		Thread.sleep(3000);
-
-		
+		Thread.sleep(2000);
 		driver.switchTo().window(baseHandle);
 
 		//click(By.xpath("//img[@type='facebook']"));
@@ -56,7 +55,7 @@ public class Login extends Base {
 		
 		click(By.xpath("//*[@id=\"root\"]//section[1]//button"));
 			
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 			
 
 		String personalMsg = getText(By.cssSelector(".styled__PrimaryText-zzhidz-4.cfoTPh"));

@@ -71,7 +71,7 @@ public class FilterTest {
 		password = Utilities.getDataFromXML("info.xml", "password", 0);
 		userName = Utilities.getDataFromXML("info.xml", "userName", 0);
 		adress = Utilities.getDataFromXML("info.xml", "adress", 0);
-	   // user =Utilities.getDataFromXML("info.xml", "user", 0);
+	    //user =Utilities.getDataFromXML("info.xml", "user", 0);
 		
 		//driver = GetDriver.getDriver(browser, baseUrl,user);
 		driver = GetDriver.getDriver(browser, baseUrl);

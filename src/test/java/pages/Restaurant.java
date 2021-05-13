@@ -61,11 +61,11 @@ public class Restaurant extends Base {
 
 		String occurrence = getText(By.xpath("//fieldset/div[2]/div[4]/div[6]/button/div[1]/div[1]/div"));
 
-		System.out.println("1" + occurrence);
+		//System.out.println("1" + occurrence);
 
 		String str = occurrence.replaceAll("\\D", "");
 
-		System.out.println("2-" + str);
+		//System.out.println("2-" + str);
 
 		int i = Integer.parseInt(str);
 
@@ -79,7 +79,7 @@ public class Restaurant extends Base {
 		// Count occurrences of restaurants in the page
 		List<WebElement> options = driver.findElements(By.xpath("//a[@data-test]"));
 
-		System.out.println("3-" + options.size());
+		//System.out.println("3-" + options.size());
 
 		if (i == options.size())
 			return true;
